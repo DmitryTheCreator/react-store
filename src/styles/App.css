@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+html {
+    background-color: #F6F5FA;
+}
+
+.App {
+    width: 1600px;
+}
+
+.card {
+    display: inline-block;
+    width: calc(25% - 16px); /* 25% ширины контейнера, вычитаем 16 пикселей между карточками */
+    margin-right: 16px; /* отступ между карточками */
+    margin-bottom: 30px; /* Расстояние между карточками */
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Скрываем лишние части, если картинка большая */
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.card__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Высота картинки */
+    width: 100%;
+    overflow: hidden; /* Скрываем лишние части, если картинка большая */
+}
+
+.card__img img {
+    height: 100%; /* Масштабируем картинку на высоту родителя */
+}
+
+.card__desc {
+    text-align: center;
+    margin-top: 16px;
+    height: 36px; /* Фиксированная высота для элемента .card__desc */
+  flex-grow: 1; /* Дать возможность контенту элемента растягиваться */
+  overflow: hidden; /* Обрезать содержимое, если оно не помещается */
+}
+
+.card__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f7f7f7;
+}
+
+.card__price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.card__counter {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.card__сount {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 12px;
+}
+
+.card__down,
+.card__up,
+.card__basket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.card__down:hover,
+.card__up:hover,
+.card__basket:hover {
+    background-color: #f7f7f7;
+}
+
+.card__basket {
+    margin-left: 12px;
+}
+
+.card__basket img {
+    height: 24px;
+}
+
+.card__counter button:hover,
+.card__basket:hover {
+  color: #fff;
+  background-color: #333;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card__basket:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.card__counter button:active,
+.card__basket:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
