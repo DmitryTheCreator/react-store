@@ -1,8 +1,11 @@
 import React from "react";
+import Counter from "./Counter";
 
 const CardItem = (props) => {
+    const isLastInRow = props.card.id % 4 === 0;
+    const cardClasses = isLastInRow ? 'card last-in-row' : 'card';
     return(
-        <div className="card">
+        <div className={cardClasses}>
             <div className="card__content">
                 <div className="card__img">
                     <img src={props.card.img} loading="lazy" alt={props.card.desc}/>
@@ -14,13 +17,9 @@ const CardItem = (props) => {
             <div className="card__bottom">
                 <div className="card__price">{props.card.price}</div>
                 <div className="card__buttons">
-                    <div className="card__counter">
-                        <button className="card__down">−</button>
-                        <div className="card__сount">1</div>
-                        <button className="card__up">+</button>
-                    </div>
+                    <Counter />
                     <button className="card__basket">
-                        <img src="../icons/basket-shopping-solid.svg" loading="lazy" alt="Добавить в корзину"/>
+                        <img src="../icons/basket.svg" loading="lazy" alt="Добавить в корзину"/>
                     </button>     
                 </div>
             </div>                        

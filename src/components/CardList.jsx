@@ -3,7 +3,7 @@ import CardItem from "./CardItem";
 
 const CardList = ({cards}) => {
     return (
-        <div className="card__list" style={{margin: '50px auto auto auto'}}>
+        <div className="card__list" style={{marginTop: "20px"}}>
             {cards.map((card) => 
                 <CardItem card={card} key={card.id}/>
             )}
